@@ -14,8 +14,8 @@ function findRepeatNumber(nums) {
   while (j < len) {
     const val = nums[j++]
 
-    if (hash[val]) return val
-    hash[val] = true
+    if (hash[val] >= 0) return val
+    hash[val] = val
   }
 
   return -1
@@ -24,3 +24,4 @@ function findRepeatNumber(nums) {
 console.log(findRepeatNumber([2, 2, 3, 0])) // 2
 console.log(findRepeatNumber([2, -1, 3, 0, 4])) // -1
 console.log(findRepeatNumber([2, 1, 3, 6, 4, 5])) // -1
+console.log(findRepeatNumber([0, 1, 3, 0])) // 0
